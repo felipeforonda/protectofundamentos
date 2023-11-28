@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #73615D;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background-image: url(img/container.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.buque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.buque label {
+    margin: 10px;
+    color: lightgray; /* Cambiar el color del texto predeterminado */
+    transition: color 0.3s ease; /* Agregar una transición suave */
+}
+
+.buque label:hover {
+    color: lightgray; /* Cambiar el color del texto cuando se pasa el cursor */
+}
+
+h1 {
+    color: lightgrey;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.boton {
+    background-color: #515a79;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover,
+.boton:active { /* Se añadió el estilo para el estado :active */
+    background-color: rgb(114, 99, 71);
+}
+
+
+
+
+input[type="text"] {
+    padding: 12px; /* Aumentado el tamaño del padding */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 25%;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease; /* Efecto de transición para el borde */
+}
+
+/* Efecto de hover para el input */
+input[type="text"]:hover {
+    border-color: #4CAF50;
+}
+/* Aquí tus estilos para la tabla */
+.tabla {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabla th, .tabla td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+.tablas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+/* Agrega tu estilo base aquí */
+
+/* Estilo para el modal */
+.modal {
+    display: none; /* Por defecto, el modal no se muestra */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: transform 0.3s ease-out; /* Agregamos una transición para el efecto translate */
+}
+
+
+ 
+.producto {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.modalcontainer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Agregamos un fondo semitransparente */
+    overflow: auto;
+    
+}
+
+
+.modalcontenido {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 50%;
+    max-width: 600px; /* Limitamos el ancho máximo del modal */
+   
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+ text-align: center;
+
+}
+
+.imagenmodel {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Limitamos la altura máxima de la imagen */
+    margin: 10px 0;
+}
+
+.botonmodel {
+    margin: 10px;
+    padding: 15px 20px;
+    font-family: "FS Kim", Georgia, serif;
+    font-weight: 500;
+    background-color: lightblue;
+    color: rgb(5, 5, 5);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center; /* Alineamos el texto al centro */
+    display: inline-block;
+}
+
+/* Estilo para el botón de cerrar */
+.botonmodel--cerrar {
+    background-color: lightskyblue;
+}
+
+.botonmodel--actualizar {
+    background-color: lightslategray;
+}
+.botonmodel:hover {
+    background-color: #bbb; /* Gris claro */
+}
+
+/* En tu archivo de estilos CSS */
+#myModal {
+    display: none; /* Inicialmente oculto */
+  }
+  
+  .modalVisible {
+    display: block !important; /* Mostrar el modal */
+  }
+  .imagenRedonda{
+    /*border-radius: 50%;*/
+    width: 160px;
+    height: 160px;
+    padding: 5px;
+}

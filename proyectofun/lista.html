@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="esty/lis.css">
+    <title>listado peluqueria</title>
+</head>
+
+<body>
+    <section class="container">
+        <div class="buque">
+            <label class="c">
+                <input type="radio" name="sexo" value="mujer" id="mujer"> femenimo
+            </label>
+            <label class="v">
+                <input type="radio" name="sexo" value="hombre" id="hombre"> masculino
+            </label>
+
+            <h1>Nombre trabajador</h1>
+            <input type="text" id="tipocor" placeholder="Ingresa Nombre">
+        </div>
+        <button class="boton" id="consultar" required="campo obligatoeio">CONSULTAR</button>
+        <button class="boton" id="limpiar">limpiar</button>
+
+
+    </section>
+
+    <section class="tablas">
+        <!-- Tabla 1 -->
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>imagen</th>
+                    <th>Tipo de Corte</th>
+                    <th>Peluquero</th>
+                    <th>Precio Corte Sencillo</th>
+                    <th>Precio Corte Premium</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody id="tabla1">
+
+            </tbody>
+        </table>
+
+
+    </section>
+
+    <div id="myModal" class="modalcontainer">
+        <div class="modalcontenido" id="modalContent">
+            <p class="producto">PRODUCTO</p>
+            
+            <p class="producto">Foto</p>
+            
+            <img class="imagenmodel" src="URL_DE_LA_IMAGEN" alt="Imagen del producto" id="img">
+            
+            <p class="producto">Id</p>
+            
+            <input class="inputproduc" type="text" value="ID_DEL_PRODUCTO" id="idp">
+            
+            <p class="producto">Sexo</p>
+            
+            <input class="inputproduc" type="text" value="sexo" id="sexos">
+            <p class="producto">Tipo corte</p>
+            
+            <input class="inputproduc" type="text" value="tipocorte" id="ticor">
+            <p class="producto">peluquero</p>
+            
+            <input class="inputproduc" type="text" value="nombre peluquero" id="pelu">
+            <p class="producto">precio corte sencillo</p>
+            <input class="inputproduc" type="text" value="precio" id="sencillo"><br>
+            <p class="producto">precio corte premiun</p>
+            <input class="inputproduc" type="text" value="precio" id="premiun"><br>
+            <p class="producto">Duraccion</p>
+            <input class="inputproduc" type="text" value="tiempo" id="tiempo"><br>
+            <p class="producto">transporte</p>
+            <input class="inputproduc" type="text" value="transporte" id="transp"><br>
+            <p class="producto">barberia</p>
+            <input class="inputproduc" type="text" value="nombre barberia" id="barberia"><br>
+            <!--id: 1,
+    imagenURL: "https://ejemplo.com/pan.png",
+    sexo: "hombre",
+    tipo_corte: "degradado",
+    peluquero: "Andres",
+    preciocortesenciloo: 10000,
+    preciocortepremium: 50000,
+    duracion: "minutos",
+    tipo_transporte: "moto",
+    nombre_barberia: "barber shop" --> 
+    <button class="botonmodel botonmodel--actualizar"  onclick="modificarmodal(indice)">Guardar cambios</button>
+            <!--<button  id="cerrar">Actualizar Producto</button> -->
+            <button class="botonmodel botonmodel--cerrar"  onclick="cerrarModal()">salir</button>
+         <!--   <button class="botonmodel botonmodel--actualizar" id="actualizar">Cerrar Modal</button>-->
+        </div>
+    </div>
+
+
+
+    <div id="informacion-pagina"></div>
+    <div id="informacion-pagina2"></div>
+    <button id="atras">Anterior</button>
+    <button id="siguiente">Siguiente</button>
+
+    <script src="script/listas.js"></script>
+
+</body>
+
+</html>
