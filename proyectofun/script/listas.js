@@ -635,10 +635,12 @@ function mostrarTabla() {
   const inicio = paginaActual * elementosPorPagina;
   const fin = inicio + elementosPorPagina;
   const data1 = dataFiltered.slice(inicio, fin);
-console.log(data1)
-  for (let i = 0; i < data1.length; i++) {
-    const corte = data1[i];
 
+  for (let i = inicio; i < fin && i < dataFiltered.length; i++) {
+   
+    const corte = dataFiltered[i];
+    console.log("sdfsfdsfs"+corte
+    )
     let tablaHTML = '';
 
     tablaHTML += '<tr>';
@@ -778,52 +780,73 @@ function filtroan() {
   dataFiltered = filtroSexo;
 }
 ;
+let indice;
 
-let indice; // Declarar la variable a nivel global
 
 function mostrarmodal(i) {
-  indice = i; // Asignar el valor al nivel global
-  const elemento = data[i];
-  const modal = document.getElementById('myModal');
+  indice =i;
+  const elemento = dataFiltered[i]; // Obtener el elemento en la posición i de data
 
-  // Llenar el modal con la información del producto
-  document.getElementById('idp').value = elemento.id;
-  document.getElementById('img').src = elemento.imagenURL;
-  document.getElementById('sexos').value = elemento.sexo;
-  document.getElementById('ticor').value = elemento.tipo_corte;
-  document.getElementById('pelu').value = elemento.peluquero;
-  document.getElementById('sencillo').value = elemento.preciocortesenciloo;
-  document.getElementById('premiun').value = elemento.preciocortepremium;
-  document.getElementById('tiempo').value = elemento.duracion;
-  document.getElementById('transp').value = elemento.tipo_transporte;
-  document.getElementById('barberia').value = elemento.nombre_barberia;
+  // Verificar si elemento está definido
+  if (elemento) {
+    const modal = document.getElementById("myModal");
 
-  // Mostrar el modal
-  modal.classList.add('modalVisible');
+    // Llenar el modal con la información del producto
+    document.getElementById('idp').value = elemento.id;
+    document.getElementById('img').src = elemento.imagenURL;
+    document.getElementById('sexos').value = elemento.sexo;
+    document.getElementById('ticor').value = elemento.tipo_corte;
+    document.getElementById('pelu').value = elemento.peluquero;
+    document.getElementById('sencillo').value = elemento.preciocortesenciloo;
+    document.getElementById('premiun').value = elemento.preciocortepremium;
+    document.getElementById('tiempo').value = elemento.duracion;
+    document.getElementById('transp').value = elemento.tipo_transporte;
+    document.getElementById('barberia').value = elemento.nombre_barberia;
+
+    // Mostrar el modal
+    modal.classList.add('modalVisible');
+  } else {
+    console.error("El elemento en la posición " + i + " de data es undefined.");
+  }
 }
-
-function modificarmodal() {
-  // Obtener el nuevo valor del ID desde el input
-  const nuevoId = document.getElementById('idp').value;
-  const nuevosexo= document.getElementById('sexos').value;
-  // Modificar el ID en el array data usando la variable global
-  data[indice].id = nuevoId;
-  data[indice].sexo= nuevosexo;
-  const elementossele = data[indice];
-
-  
-  // Cerrar el modal después de modificar el ID
-  console.log(data[indice])
-  mostrarTabla();
-}
-
-
 function cerrarModal() {
   // Ocultar el modal
   const modal = document.getElementById('myModal');
   modal.classList.remove('modalVisible');
   modificarmodal();
 }
+
+
+function modificarmodal() {
+  // Obtener el nuevo valor del ID desde el input
+const nuevoid = document.getElementById('idp').value;
+const nuevosexo = document.getElementById('sexos').value;
+ 
+
+// Modificar el ID en el array data usando la variable global
+dataFiltered[indice].id = nuevoid;
+
+    let elementossele = dataFiltered[indice];
+
+
+    for(i = 0; i < data.length; i++){
+        
+        if(data[i].id === elementossele.id ){
+            data[i]= elementossele;
+        }
+
+    }  
+ 
+
+ 
+  // Cerrar el modal después de modificar el ID
+  console.log(dataFiltered[indice])
+mostrarTabla();
+
+}
+
+
+
 
 
 /*function actualizarElemento(index) {
