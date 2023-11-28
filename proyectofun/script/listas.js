@@ -25,7 +25,7 @@ const data = [
   },
   {
     id: 3,
-    imagenURL: "tiago.jpeg",
+    imagenURL: "https://scontent.fclo7-1.fna.fbcdn.net/v/t39.30808-6/275299413_5633804926646448_5023373022363795358_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFIkpUabK88QwPg0MxnmzGDMqIMQcSDDJAyogxBxIMMkH1M6W0tcwWojG4OChpP3PvDvXOkk-7468ZQd6r2EwY1&_nc_ohc=blMBl_MIFdAAX-IgziD&_nc_ht=scontent.fclo7-1.fna&oh=00_AfDmOBgRgkgfoA8sNBbzsyu6ZKMSz8fo0Vfg9nwLsOLU9A&oe=656AD324",
     sexo: "hombre",
     tipo_corte: "cobie",
     peluquero: "tiago",
